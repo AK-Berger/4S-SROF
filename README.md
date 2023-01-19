@@ -12,11 +12,11 @@ Title: Deep learning to analyze sliding drops
 
 Authors: Sajjad Shumaly, Fahimeh Darvish, Xiaomei Li, Alexander Saal, Chirag Hinduja, Werner Steffen, Oleksandra Kukharenko, Hans-Jürgen Butt, Rüdiger Berger*
 
-Journal:
+Journal: Langmuir
 
-Date:
+Publication Date: January 12, 2023
 
-DOI:
+DOI: 10.1021/acs.langmuir.2c02847
 
 ---
 # Data Information:
