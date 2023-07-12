@@ -32,8 +32,8 @@ DOI: 10.1021/acs.langmuir.2c02847
 - drop_profile.mp4
 
     The video shows a sliding drop on a sample with a defect in the middle. The first drop in the upper part of the video is a real drop image after preprocessing steps. The main steps of preprocessing included calculating the tilt angle and making the frames horizontal, removing noises and background, and detecting drop position (red lines). The second drop image which is bigger than the first one is the drop image after using a super-resolution model. Below that, the drop contour is extracted and different parameters including CAs, drop height, and drop length are displayed. On the left, four figures are getting plotted to analyze how a drop slides on a sample with a defect.
-    
-    https://user-images.githubusercontent.com/57271994/194625754-6250b70f-d77e-4519-8815-165735eb803c.mp4
+
+[Watch the video](https://pubs.acs.org/doi/suppl/10.1021/acs.langmuir.2c02847/suppl_file/la2c02847_si_002.mp4)
 
 ### The ESPCN super-resolution model weights: 
 
