@@ -12,11 +12,11 @@ Title: Deep learning to analyze sliding drops
 
 Authors: Sajjad Shumaly, Fahimeh Darvish, Xiaomei Li, Alexander Saal, Chirag Hinduja, Werner Steffen, Oleksandra Kukharenko, Hans-Jürgen Butt, Rüdiger Berger*
 
-Journal:
+Journal: Langmuir
 
-Date:
+Publication Date: January 12, 2023
 
-DOI:
+DOI: 10.1021/acs.langmuir.2c02847
 
 ---
 # Data Information:
@@ -31,9 +31,13 @@ DOI:
 
 - drop_profile.mp4
 
-    The drop profile video shows a droplet that is sliding on a tilted plate after rotation (making it horizontal), removing the background and noises. The bigger droplet is the same droplet image after enhancing the resolution using the super-resolution model. On the bottom right, a droplet profile related to the same frame is shown on the extracted droplet edge. On the bottom left, the 4 criteria diagrams are getting completed simultaneously with the drop movement.
-    
-    https://user-images.githubusercontent.com/57271994/194625754-6250b70f-d77e-4519-8815-165735eb803c.mp4
+    The video shows a sliding drop on a sample with a defect in the middle. The first drop in the upper part of the video is a real drop image after the preprocessing steps. The main steps of preprocessing included calculating the tilt angle and making the frames horizontal, removing noises and background, and detecting drop position (red lines). The second drop image which is bigger than the first one is the drop image after using a super-resolution model. Below that, the drop contour is extracted and different parameters including CAs, drop height, and drop length are displayed. On the left, four figures are plotted to analyze how a drop slides on a sample with a defect.
+
+
+
+https://github.com/AK-Berger/4S-SROF/assets/57271994/4130c91c-193a-4bf9-b08d-e2df878f88bf
+
+
 
 ### The ESPCN super-resolution model weights: 
 
@@ -59,7 +63,7 @@ DOI:
 
 ### The dataset: 
 
-- This is provided in research supporting information. 14000 sliding drop images were used as the dataset to train the modified super-resolution model. 
+- This is provided in research supporting information. 14000 sliding drop images were used as the dataset to train the modified super-resolution model. [Download the dataset](https://www.kaggle.com/datasets/sajjdeus/4s-srof).
 
 ### Samples: 
 
