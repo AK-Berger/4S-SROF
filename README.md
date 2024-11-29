@@ -1,4 +1,4 @@
-# About 4S-SROF
+# Deep Learning to Analyze Sliding Drops ([Cite Us](#support))
 
 The 4S-SROF toolkit is trying to address existing problems to analyze drop sliding motion on a tilted plate. It helps researchers conduct detailed studies with a broad range of variables considering their correlations. The 4S-SROF is able to enlarge images by up-scale ratio 3 using a super-resolution model trained on a dataset containing 14000 images from sliding drops. Then, different criteria are extracted from super-resolution images. Measuring contact angles is performed by an optimized polynomial explained in the manuscript.
 
