@@ -1,22 +1,15 @@
 # Deep Learning to Analyze Sliding Drops ([Cite Us](#citation))
 
-The 4S-SROF toolkit is trying to address existing problems to analyze drop sliding motion on a tilted plate. It helps researchers conduct detailed studies with a broad range of variables considering their correlations. The 4S-SROF is able to enlarge images by up-scale ratio 3 using a super-resolution model trained on a dataset containing 14000 images from sliding drops. Then, different criteria are extracted from super-resolution images. Measuring contact angles is performed by an optimized polynomial explained in the manuscript.
+The **4S-SROF toolkit** is designed to solve existing challenges in analyzing the sliding motion of drops on tilted plates. It enables researchers to conduct detailed studies by considering a wide range of variables and their correlations.
 
+Key features include:
+- **Super-Resolution Enhancement**: The toolkit enlarges images by an up-scale ratio of 3 using a super-resolution model trained on a dataset of 14,000 sliding drop images.
+- **Comprehensive Analysis**: Extracts various criteria from the super-resolution images to provide precise insights into drop behavior.
+- **Optimized Contact Angle Measurement**: Contact angles are measured using an optimized polynomial method, as described in the accompanying manuscript.
+
+The 4S-SROF toolkit streamlines complex image processing tasks, empowering researchers with high-quality data for in-depth analysis.
 
 ![graphical abstract](https://user-images.githubusercontent.com/57271994/194614949-8736973c-4df3-4449-9a21-bc2423405648.png)
-
----
-# Publication Information:
-
-Title: Deep learning to analyze sliding drops
-
-Authors: Sajjad Shumaly, Fahimeh Darvish, Xiaomei Li, Alexander Saal, Chirag Hinduja, Werner Steffen, Oleksandra Kukharenko, Hans-Jürgen Butt, Rüdiger Berger*
-
-Journal: Langmuir
-
-Publication Date: January 12, 2023
-
-DOI: 10.1021/acs.langmuir.2c02847
 
 ---
 # Data Information
