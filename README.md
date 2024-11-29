@@ -89,10 +89,38 @@ https://github.com/AK-Berger/4S-SROF/assets/57271994/4130c91c-193a-4bf9-b08d-e2d
 - matplotlib 3.4.3; https://pypi.org/project/matplotlib/
 
 ---
-# Support
+# Citation
 
-You can communicate with us using the following e-mails:
+If you find **"Deep Learning to Analyze Sliding Drops"** useful for your research, please consider citing the paper using the following information:
 
-- shumalys@mpip-mainz.mpg.de
-- berger@mpip-mainz.mpg.de
+<div style="position: relative;">
+  <pre>
+    <code>
+@article{shumaly2023deep,
+  title={Deep learning to analyze sliding drops},
+  author={Shumaly, Sajjad and Darvish, Fahimeh and Li, Xiaomei and Saal, Alexander and Hinduja, Chirag and Steffen, Werner and Kukharenko, Oleksandra and Butt, Hans-J{\"u}rgen and Berger, R{\"u}diger},
+  journal={Langmuir},
+  volume={39},
+  number={3},
+  pages={1111--1122},
+  year={2023},
+  publisher={ACS Publications}
+}
+    </code>
+  </pre>
+  <button onclick="copyText(this)" style="position: absolute; top: 0; right: 0;">Copy</button>
+</div>
+
+<script>
+  function copyText(button) {
+    const codeBlock = button.previousElementSibling.innerText;
+    navigator.clipboard.writeText(codeBlock).then(() => {
+      alert('Copied to clipboard!');
+    });
+  }
+</script>
+
+
+
+
 ---
