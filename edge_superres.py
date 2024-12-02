@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 #importing libraries
 import numpy as np
@@ -15,53 +10,75 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
 
 
-# In[22]:
+# Define the DepthToSpace layer
+class DepthToSpace(layers.Layer):
+    def __init__(self, upscale_factor, **kwargs):
+        super(DepthToSpace, self).__init__(**kwargs)
+        self.upscale_factor = upscale_factor
 
+    def call(self, inputs):
+        return tf.nn.depth_to_space(inputs, self.upscale_factor)
 
-#building the model structure and loading the trained weight on it
+# Build the model architecture and load the trained weights
 def model_architecture(weight_address):
-    #initial values
-    upscale_factor=3
-    channels=1
+    # Initial values
+    upscale_factor = 3
+    channels = 1
     conv_args = {
         "activation": "relu",
         "kernel_initializer": "Orthogonal",
         "padding": "same",
     }
-    #model structure
+    # Model structure
     inputs = keras.Input(shape=(None, None, channels))
     x = layers.Conv2D(64, 5, **conv_args)(inputs)
     x = layers.Conv2D(64, 3, **conv_args)(x)
     x = layers.Conv2D(32, 3, **conv_args)(x)
     x = layers.Conv2D(channels * (upscale_factor ** 2), 3, **conv_args)(x)
-    outputs = tf.nn.depth_to_space(x, upscale_factor)
-    #loading model
-    model=keras.Model(inputs, outputs)
+    outputs = DepthToSpace(upscale_factor=upscale_factor)(x)
+    
+    # Load model
+    model = keras.Model(inputs, outputs)
     model.load_weights(weight_address)
+    
+    return model
 
-    return(model)
+# Optimize model prediction with @tf.function
+@tf.function
+def predict(input_tensor, model):
+    return model(input_tensor, training=False)
 
-#converting the low-resolution image to super-resolution image and related preprocessing
+# Upscale the image using the optimized model and OpenCV
 def upscale_image(model, img):
-    ycbcr = img.convert("YCbCr")
-    y, cb, cr = ycbcr.split()
-    y = img_to_array(y)
-    y = y.astype("float32") / 255.0
+    # img is expected to be a NumPy array in RGB format
+    # Convert image to YCrCb color space
+    img_y_cr_cb = cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
+    y_channel, cr_channel, cb_channel = cv2.split(img_y_cr_cb)
 
-    input = np.expand_dims(y, axis=0)
-    
-    out = model.predict(input)
-    out_img_y = out[0]
-    out_img_y *= 255.0
-    out_img_y = out_img_y.clip(0, 255)
-    out_img_y = out_img_y.reshape((np.shape(out_img_y)[0], np.shape(out_img_y)[1]))
-    out_img_y = PIL.Image.fromarray(np.uint8(out_img_y), mode="L")
-    
-    out_img_cb = cb.resize(out_img_y.size, PIL.Image.BICUBIC)
-    out_img_cr = cr.resize(out_img_y.size, PIL.Image.BICUBIC)
-    out_img = PIL.Image.merge("YCbCr", (out_img_y, out_img_cb, out_img_cr)).convert("RGB")
-    out_img=cv2.GaussianBlur(np.array(out_img),(3,3),0)
-    return (out_img)
+    # Normalize Y channel
+    y = y_channel.astype("float32") / 255.0
+    input_tensor = np.expand_dims(y, axis=0)  # Add batch dimension
+    input_tensor = np.expand_dims(input_tensor, axis=-1)  # Add channel dimension
+
+    # Model prediction
+    input_tensor_tf = tf.convert_to_tensor(input_tensor)
+    out = predict(input_tensor_tf, model)
+    out_img_y = out[0, :, :, 0].numpy()  # Remove batch and channel dimensions
+    out_img_y = (out_img_y * 255.0).clip(0, 255).astype("uint8")
+
+    # Resize Cr and Cb channels to match the upscaled Y channel size
+    height, width = out_img_y.shape
+    cr_resized = cv2.resize(cr_channel, (width, height), interpolation=cv2.INTER_CUBIC)
+    cb_resized = cv2.resize(cb_channel, (width, height), interpolation=cv2.INTER_CUBIC)
+
+    # Merge channels and convert back to RGB color space
+    out_img_y_cr_cb = cv2.merge([out_img_y, cr_resized, cb_resized])
+    out_img_rgb = cv2.cvtColor(out_img_y_cr_cb, cv2.COLOR_YCrCb2RGB)
+
+    # Apply Gaussian Blur
+    out_img_rgb = cv2.GaussianBlur(out_img_rgb, (3, 3), 0)
+
+    return out_img_rgb
 
 #edge detection using canny and removing extra detected pixels
 def edge_extraction_canny( upscaled_image, canny_v1=100, canny_v2=200):
