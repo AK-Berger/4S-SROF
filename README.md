@@ -14,11 +14,27 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 ---
 # Data Information
 
+
+## Instructions
+
+- **File:** `instructions.md`  
+
+    This file is a comprehensive guide designed to assist researchers in setting up and using the analysis toolkit. It has two general sections: one focused on setting up the environment and another on effectively using the code.
+
+    - **How to Set Up:**  
+      This section guides you through the installation of Python, Anaconda, and Jupyter Notebook. It explains how to download the code repository, prepare your working directory, and ensure all necessary libraries are installed for a seamless setup.  
+
+    - **How to Use:**  
+      This section provides detailed steps for preparing video frames, creating and marking the slope folder, and running the analysis code. It also explains how to configure experiment-specific variables and interpret the generated outputs, such as `result.xlsx` and analyzed frame outputs.
+---
+
 ## Tutorial
 
-- **File:** `tutorial.ipynb`
+- **File:** `tutorial.ipynb`  
 
-    This tutorial contains examples and outputs explaining how the toolkit works step-by-step. It is designed to help researchers understand each step and its parameters. A comprehensive example is provided at the end, demonstrating the extraction of all criteria from a high-speed camera video.
+    This file contains examples that demonstrate how the code's functions work in detail. It is designed for researchers who are familiar with coding and want to leverage the provided functions for tasks such as detecting surface slopes, extracting drop edges, or identifying appropriate video frames where only one droplet is present in the frame automatically.  
+
+    If you are not familiar with coding or prefer to use the toolkit quickly for analyzing sliding drop videos, you may skip this file.
 
 ---
 
@@ -70,12 +86,11 @@ These scripts are essential for researchers working with this toolkit.
 
 ---
 
-## Samples
+## PFOTS Sample with a Defect
 
-- **Description:** The `samples` folder contains two sliding drop examples. Pre-run outputs are included in `tutorial.ipynb`. 
-- **Usage:** 
-  - To re-run the tutorial, add the `samples` folder to your working directory.
-  - Alternatively, replace the video frames with your own dataset.
+- **Files:** `PFOTS sample with a defect.zip.001 - .007`  
+
+    These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
 
 ---
 # Libraries and Versions
