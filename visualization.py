@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[92]:
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,18 +5,16 @@ import criteria_definition
 plt.rcParams["figure.figsize"] = (20,15)
 
 
-# In[94]:
 
-
-def visualize(save_address ,i_list,j_list,i_left,j_left,i_right,j_right,
+def visualize(save_address , i_list,j_list,i_left,j_left,i_right,j_right,
              j_poly_left,i_poly_left,j_poly_right,i_poly_right,x_cropped,
-             i_poly_left_rotated, j_poly_left_rotated, i_poly_right_rotated, j_poly_right_rotated, middle_line_switch=0):
+             i_poly_left_rotated, j_poly_left_rotated, i_poly_right_rotated, j_poly_right_rotated, cm_on_pixel=5/1280, middle_line_switch=0):
 
     plt.cla()
     font_size=14
 
     #conversion_factor
-    cm_on_pixel=5/1280
+    
     upscale_factor=3
     conversion_factor=cm_on_pixel/upscale_factor
 
@@ -42,7 +34,7 @@ def visualize(save_address ,i_list,j_list,i_left,j_left,i_right,j_right,
     adv=left_angle_degree
     plt.plot([i_poly_left[0]+20,i_poly_left[0]],[j_poly_left[0],j_poly_left[0]],linewidth=3, color='blue')
     m=np.tan(left_angle_degree*(np.pi/180))
-    plt.plot([i_poly_left[0],i_poly_left[0]+(1/m)*j_poly_left[5]],[j_poly_left[0],j_poly_left[5]],linewidth=3, color='blue')
+    plt.plot([i_poly_left[0],i_poly_left[0]+(1/m)*j_poly_left[20]],[j_poly_left[0],j_poly_left[20]],linewidth=3, color='blue')
     plt.text(i_poly_left[0], j_poly_left[0]-12, 'Advancing='+str(round(adv, 2)), color="blue", fontsize=font_size)
 
     #right angle
@@ -50,7 +42,7 @@ def visualize(save_address ,i_list,j_list,i_left,j_left,i_right,j_right,
     rec=right_angle_degree
     plt.plot([i_poly_right[0]-20,i_poly_right[0]],[j_poly_right[0],j_poly_right[0]],linewidth=3, color='blue')
     m=np.tan(right_angle_degree*(np.pi/180))
-    plt.plot([i_poly_right[0],i_poly_right[0]-(1/m)*j_poly_right[10]],[j_poly_right[0],j_poly_right[10]],linewidth=3, color='blue')
+    plt.plot([i_poly_right[0],i_poly_right[0]-(1/m)*j_poly_right[20]],[j_poly_right[0],j_poly_right[20]],linewidth=3, color='blue')
     plt.text(i_poly_right[0]-65, j_poly_right[0]-12, 'Receding='+str(round(rec, 2)), color="blue", fontsize=font_size)
 
     #Contact line
