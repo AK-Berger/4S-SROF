@@ -14,30 +14,6 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 ---
 # Data Information
 
-
-## Instructions
-
-- **File:** `instructions.md`  
-
-    This file is a comprehensive guide designed to assist researchers in setting up and using the analysis toolkit. It has two general sections: one focused on setting up the environment and another on effectively using the code.
-
-    - **How to Set Up:**  
-      This section guides you through the installation of Python, Anaconda, and Jupyter Notebook. It explains how to download the code repository, prepare your working directory, and ensure all necessary libraries are installed for a seamless setup.  
-
-    - **How to Use:**  
-      This section provides detailed steps for preparing video frames, creating and marking the slope folder, and running the analysis code. It also explains how to configure experiment-specific variables and interpret the generated outputs, such as `result.xlsx` and analyzed frame outputs.
----
-
-## Tutorial
-
-- **File:** `tutorial.ipynb`  
-
-    This file contains examples that demonstrate how the code's functions work in detail. It is designed for researchers who are familiar with coding and want to leverage the provided functions for tasks such as detecting surface slopes, extracting drop edges, or identifying appropriate video frames where only one droplet is present in the frame automatically.  
-
-    If you are not familiar with coding or prefer to use the toolkit quickly for analyzing sliding drop videos, you may skip this file.
-
----
-
 ## Drop Profile Video
 
 - **File:** `drop_profile.mp4`
@@ -53,6 +29,52 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
     - On the left, four plots analyze how the drop slides over a defected sample.
 
 [Preview the video on GitHub](https://github.com/AK-Berger/4S-SROF/assets/57271994/4130c91c-193a-4bf9-b08d-e2df878f88bf)
+
+---
+
+## Instructions
+
+- **File:** `instructions.md`  
+
+    This file is a comprehensive guide designed to assist researchers in setting up and using the analysis toolkit. It has two general sections: one focused on setting up the environment and another on effectively using the code.
+
+    - **How to Set Up:**  
+      This section guides you through the installation of Python, Anaconda, and Jupyter Notebook. It explains how to download the code repository, prepare your working directory, and ensure all necessary libraries are installed for a seamless setup.  
+
+    - **How to Use:**  
+      This section provides detailed steps for preparing video frames, creating and marking the slope folder, and running the analysis code. It also explains how to configure experiment-specific variables and interpret the generated outputs, such as `result.xlsx` and analyzed frame outputs.
+
+---
+## Control Panel
+
+- **File:** `Control Panel.ipynb`  
+
+    This file contains the main executable code for the toolkit. It acts as a central hub, calling other `.py` files and libraries to perform the analysis. The code processes the video frames, extracts features, and generates the final `result.xlsx` file containing the analyzed time-series data. It integrates all steps of the workflow, making it easy to convert raw video frames into meaningful results.
+
+
+---
+## PFOTS Sample with a Defect
+
+- **Files:** `PFOTS sample with a defect.zip.001 - .007`  
+
+    These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
+
+---
+## Tutorial
+
+- **File:** `tutorial.ipynb`  
+
+    This file contains examples that demonstrate how the code's functions work in detail. It is designed for researchers who are familiar with coding and want to leverage the provided functions for tasks such as detecting surface slopes, extracting drop edges, or identifying appropriate video frames where only one droplet is present in the frame automatically.  
+
+    If you are not familiar with coding or prefer to use the toolkit quickly for analyzing sliding drop videos, you may skip this file.
+
+---
+
+
+## Dataset
+
+- **Description:** The dataset contains 14,000 sliding drop images used to train the modified super-resolution model.
+- **Access:** [Download the dataset](https://www.kaggle.com/datasets/sajjdeus/4s-srof)
 
 ---
 
@@ -79,20 +101,6 @@ These scripts are essential for researchers working with this toolkit.
 
 ---
 
-## Dataset
-
-- **Description:** The dataset contains 14,000 sliding drop images used to train the modified super-resolution model.
-- **Access:** [Download the dataset](https://www.kaggle.com/datasets/sajjdeus/4s-srof)
-
----
-
-## PFOTS Sample with a Defect
-
-- **Files:** `PFOTS sample with a defect.zip.001 - .007`  
-
-    These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
-
----
 # Libraries and Versions
 
 Below is a list of the libraries and their corresponding versions used in this project:
