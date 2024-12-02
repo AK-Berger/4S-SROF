@@ -226,8 +226,11 @@ After setting the variables in the second cell, follow these steps:
 
 2. **Droplet in Frame**:  
    - Ensure there is only **one droplet** visible in the video frames throughout the experiment.  
-   - If even a few pixels of another droplet appear in the frames, the code might crash or produce incorrect results.  
+   - If even a few pixels of another droplet appear in the frames, the code might crash or produce incorrect results.
+  
+3. **Slope Folder**:  
+   - If you plan to perform measurements for different droplet numbers or tilt angles **without altering the experimental setup**, you can reuse the `slope` folder created during the first experiment. Simply copy this folder to the new experiment directory, and there is no need to create a new `slope` folder.  
+   - However, if the setup is adjusted (e.g., changing the surface or modifying the alignment), the relative angle between the camera and the sample may change. In such cases, you must create a new `slope` folder and generate fresh `.bmp` files to ensure accurate measurements.
 
-Adhering to these guidelines will help you avoid potential errors and ensure the analysis runs smoothly.
 
 
