@@ -2,9 +2,9 @@
 
 tensorflow==2.18.0
 keras==3.7.0
-cv2==4.10.0
+opencv-python==4.10.0.82
 scipy==1.11.4
-Pillow==8.4.0
+pillow==11.1.0
 numpy==1.26.4
 pandas==2.1.4
 matplotlib==3.8.0
