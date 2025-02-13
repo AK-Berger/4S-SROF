@@ -103,22 +103,9 @@ These scripts are essential for researchers working with this toolkit.
 
 # Libraries and Versions
 
-Below is a list of the libraries and their corresponding versions used in this project:
+pip install -r requirements.txt
 
-| Library      | Version | Link                                                 |
-|--------------|---------|------------------------------------------------------|
-| TensorFlow   | 2.5.0   | [tensorflow](https://pypi.org/project/tensorflow/)   |
-| Keras        | 2.9.0   | [keras](https://pypi.org/project/keras/)             |
-| OpenCV (cv2) | 4.5.4   | [opencv-python](https://pypi.org/project/opencv-python/) |
-| SciPy        | 1.7.1   | [scipy](https://pypi.org/project/scipy/)             |
-| Pillow (PIL) | 8.4.0   | [Pillow](https://pypi.org/project/Pillow/)           |
-| NumPy        | 1.20.3  | [numpy](https://pypi.org/project/numpy/)             |
-| Pandas       | 1.3.4   | [pandas](https://pypi.org/project/pandas/)           |
-| Matplotlib   | 3.4.3   | [matplotlib](https://pypi.org/project/matplotlib/)   |
-| Natsort      | 8.4.0   | [natsort](https://pypi.org/project/natsort/)         |
-
-Each library name links to its official PyPI page for more details.
-
+Requires Python 3.11.7
 
 ---
 # Citation
