@@ -60,15 +60,6 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
     These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
 
 ---
-## Tutorial
-
-- **File:** `tutorial.ipynb`  
-
-    This file contains examples that demonstrate how the code's functions work in detail. It is designed for researchers who are familiar with coding and want to leverage the provided functions for tasks such as detecting surface slopes, extracting drop edges, or identifying appropriate video frames where only one droplet is present in the frame automatically.  
-
-    If you are not familiar with coding or prefer to use the toolkit quickly for analyzing sliding drop videos, you may skip this file.
-
----
 
 
 ## Dataset
@@ -78,34 +69,55 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
 ---
 
-## ESPCN Super-Resolution Model Weights
+# Python Environment Setup Guide
 
-- **File:** `SuperRes_weights.h5`
+Open **Anaconda Prompt**, **Command Prompt (cmd)**, or **Terminal** to execute the following commands.
 
-    This file contains the weights for the modified ESPCN super-resolution model, trained on 14,000 sliding drop images.
+To create a new virtual environment named `myenv`, run:
 
----
+```sh
+python -m venv myenv
+```
 
-## Python Files
+To activate the virtual environment, use the following command:
 
-The following `.py` files are included in the toolkit and provide functions for related image processing tasks:
+For Windows:
 
-- `angle_detection.py`
-- `baseline_detection.py`
-- `criteria_definition.py`
-- `edge_superres.py`
-- `tools.py`
-- `visualization.py`
+```sh
+myenv\Scripts\activate
+```
 
-These scripts are essential for researchers working with this toolkit.
+For macOS/Linux:
 
----
+```sh
+source myenv/bin/activate
+```
 
-# Libraries and Versions
+To install the dependencies specified in `requirements.txt`, use:
 
+```sh
 pip install -r requirements.txt
+```
 
-Requires Python 3.11.7
+To enable the virtual environment for Jupyter Notebook, install the `ipykernel` package:
+
+```sh
+pip install ipykernel
+```
+
+To register the virtual environment as a kernel in Jupyter Notebook, run:
+
+```sh
+python -m ipykernel install --user --name=myenv --display-name "Python (myenv)"
+```
+
+To start Jupyter Notebook, run:
+
+```sh
+jupyter notebook
+```
+
+Open a new notebook, navigate to **Kernel → Change Kernel**, and select **"Python (myenv)"** from the list.
 
 ---
 # Citation
