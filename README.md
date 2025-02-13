@@ -73,7 +73,9 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
 Open **Anaconda Prompt**, **Command Prompt (cmd)**, or **Terminal** to execute the following commands.
 
-To create a new virtual environment named `myenv`, run:
+Install Python 3.11.7.
+
+To create a new virtual environment named `myenv` manually, run:
 
 ```sh
 python -m venv myenv
