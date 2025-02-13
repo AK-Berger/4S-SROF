@@ -69,7 +69,7 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
 ---
 
-# Python Environment Setup Guide
+## Python Environment Setup Guide
 
 Open **Anaconda Prompt**, **Command Prompt (cmd)**, or **Terminal** to execute the following commands.
 
@@ -122,7 +122,7 @@ jupyter notebook
 Open a new notebook, navigate to **Kernel → Change Kernel**, and select **"Python (myenv)"** from the list.
 
 ---
-# Citation
+## Citation
 
 If you find **"Deep Learning to Analyze Sliding Drops"** useful for your research, please consider citing the paper using the following information:
 
