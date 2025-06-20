@@ -1,4 +1,4 @@
-# Contributing to Drop-Surface-Temporal-Profiling
+# Contributing to 4S-SROF
 
 We appreciate your interest in contributing to this project! All contributions, including bug reports, bug fixes, documentation improvements, enhancements, and ideas, are welcome.
 
