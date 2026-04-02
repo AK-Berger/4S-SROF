@@ -34,22 +34,24 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
 ## Instructions
 
-- **File:** `instructions.md`  
+- **File:** `Instructions.md`  
 
-    This file is a comprehensive guide designed to assist researchers in setting up and using the analysis toolkit. It has two general sections: one focused on setting up the environment and another on effectively using the code.
+    This document provides the complete setup and usage guide for the toolkit. It is organized into two main parts: environment setup and workflow execution.
 
-    - **How to Set Up:**  
-      This section guides you through the installation of Python, Anaconda, and Jupyter Notebook. It explains how to download the code repository, prepare your working directory, and ensure all necessary libraries are installed for a seamless setup.  
+    - **Environment Setup:**  
+      Covers Conda installation, creation of the `srof` environment, dependency installation from `requirements.txt`, and Jupyter kernel registration.
 
-    - **How to Use:**  
-      This section provides detailed steps for preparing video frames, creating and marking the slope folder, and running the analysis code. It also explains how to configure experiment-specific variables and interpret the generated outputs, such as `result.xlsx` and analyzed frame outputs.
+    - **Workflow Usage:**  
+      Describes how to prepare video frames, create and mark the `slope` folder, run the notebook, configure experiment-specific variables, and interpret the generated outputs.
 
 ---
-## Control Panel
+## Analysis Workflow
 
-- **File:** `Control Panel.ipynb`  
+- **File:** `analysis_workflow.ipynb`  
 
-    This file contains the main executable code for the toolkit. It acts as a central hub, calling other `.py` files and libraries to perform the analysis. The code processes the video frames, extracts features, and generates the final `result.xlsx` file containing the analyzed time-series data. It integrates all steps of the workflow, making it easy to convert raw video frames into meaningful results.
+    This file contains the main executable notebook for the toolkit. It acts as the central workflow, calling package modules and libraries to perform the analysis. The notebook processes the video frames, extracts features, and generates the final `result.xlsx` file containing the analyzed time-series data.
+
+    Shared helper functions used by the notebook now live in `srof/analysis_workflow.py`, which keeps the notebook setup cell cleaner and makes the workflow logic easier to maintain.
 
 
 ---
@@ -71,55 +73,39 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
 ## Python Environment Setup Guide
 
-Open **Anaconda Prompt**, **Command Prompt (cmd)**, or **Terminal** to execute the following commands.
+The project is currently aligned with the `srof` Conda environment and has been tested with Python 3.9.
 
-Install Python 3.11.7.
-
-To create a new virtual environment named `myenv` manually, run:
+1. Create a Conda environment:
 
 ```sh
-python -m venv myenv
+conda create -n srof python=3.9
 ```
 
-To activate the virtual environment, use the following command:
-
-For Windows:
+2. Activate the environment:
 
 ```sh
-myenv\Scripts\activate
+conda activate srof
 ```
 
-For macOS/Linux:
-
-```sh
-source myenv/bin/activate
-```
-
-To install the dependencies specified in `requirements.txt`, use:
+3. Install the project dependencies:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-To enable the virtual environment for Jupyter Notebook, install the `ipykernel` package:
+4. Register the environment as a Jupyter kernel:
 
 ```sh
-pip install ipykernel
+python -m ipykernel install --user --name=srof --display-name "Python (srof)"
 ```
 
-To register the virtual environment as a kernel in Jupyter Notebook, run:
-
-```sh
-python -m ipykernel install --user --name=myenv --display-name "Python (myenv)"
-```
-
-To start Jupyter Notebook, run:
+5. Start Jupyter Notebook:
 
 ```sh
 jupyter notebook
 ```
 
-Open a new notebook, navigate to **Kernel → Change Kernel**, and select **"Python (myenv)"** from the list.
+Then open `analysis_workflow.ipynb` and select the `Python (srof)` kernel if needed.
 
 ---
 ## Citation

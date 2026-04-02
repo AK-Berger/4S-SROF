@@ -1,65 +1,50 @@
 
-# Beginner-Friendly Instructions to Set Up and Use the Code
-# How to Set Up the Code
+# Setup and Usage Guide
 
-Welcome! This guide is designed to help you set up your environment and run the provided code seamlessly. Follow these steps carefully, and you'll be ready to go in no time.
-
----
-
-## Step 1: Install Python
-
-Before starting, make sure Python is installed on your computer. Follow these steps:
-
-1. **Download Python**:  
-   Go to the [official Python website](https://www.python.org/downloads/) and download the latest version for your operating system.
-
-2. **Install Python**:  
-   - Run the downloaded installer.
-   - Check the box that says **"Add Python to PATH"** before proceeding with the installation.
-   - Follow the installation wizard and complete the setup.
-
-3. **Verify Installation**:  
-   Open a terminal or command prompt and type:
-   ```bash
-   python --version
-   ```
-   If Python is installed correctly, you'll see the installed version number.
+This document explains how to configure the environment and run the 4S-SROF analysis workflow.
 
 ---
 
-## Step 2: Install Anaconda
+## Step 1: Install Anaconda or Miniconda
 
-Anaconda is a comprehensive platform that simplifies working with Python and data science tools.
+The recommended setup for this project is a dedicated Conda environment. Install either:
 
-1. **Download Anaconda**:  
-   Visit the [Anaconda website](https://www.anaconda.com/products/distribution) and download the latest version for your operating system.
+1. **Anaconda**: [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)  
+2. **Miniconda**: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
 
-2. **Install Anaconda**:  
-   - Run the installer and follow the on-screen instructions.
-   - Choose to add Anaconda to your PATH (optional but recommended).
+After installation, verify that Conda is available:
 
-3. **Verify Installation**:  
-   Open a terminal (or Anaconda Prompt) and type:
-   ```bash
-   conda --version
-   ```
-   You should see the installed version of Conda.
+```bash
+conda --version
+```
 
 ---
 
-## Step 3: Set Up Your Integrated Development Environment (IDE)
+## Step 2: Create the Project Environment
 
-To run the code, you need an IDE. We recommend **Jupyter Notebook**, which is included with Anaconda.
+This project is currently aligned with the `srof` environment and tested with Python 3.9.
 
-### Why Jupyter Notebook?  
-Jupyter Notebook is a user-friendly, interactive environment perfect for running Python code and visualizing data.
+1. Create the environment:
 
-### Steps to Open Jupyter Notebook:
-If you installed Anaconda, you already have Jupyter Notebook installed. You can simply search for "Jupyter Notebook" in your operating system's search bar and open it. Once opened, a web browser will display the Jupyter Notebook dashboard where you can manage and run your notebooks.
+```bash
+conda create -n srof python=3.9
+```
+
+2. Activate it:
+
+```bash
+conda activate srof
+```
+
+3. Confirm the Python version:
+
+```bash
+python --version
+```
 
 ---
 
-## Step 4: Download the GitHub Repository
+## Step 3: Download the GitHub Repository
 
 The code is hosted on GitHub. Follow these steps to download and use it:
 
@@ -69,53 +54,49 @@ The code is hosted on GitHub. Follow these steps to download and use it:
      git clone <repository-url>
      ```
 
-2. **Save in an Easy-to-Find Location**:  
-   - If you are using Jupyter Notebook, it's best to save the repository in:
-     ```
-     C:/Users/[your_admin_name]/
-     ```
-   - This ensures you can quickly access it from the Jupyter Notebook dashboard.
+2. **Save the Repository in a Convenient Location**:  
+   - Choose any location that is easy for you to access from Jupyter Notebook or your file browser.
+   - Keep the project files together so the notebook can access the input data, weights file, and package modules consistently.
 
 ---
 
-## Step 6: Install Required Libraries
+## Step 4: Install Required Libraries
 
-This project requires the following libraries and specific versions. Some of these libraries are automatically included when you install Anaconda. The list below clarifies which libraries are pre-installed and which need manual installation.
+All required Python packages are maintained in `requirements.txt`. After activating the `srof` environment, install them with:
 
-### Libraries and Versions
-Below is a list of the libraries and their corresponding versions used in this project:
+```bash
+pip install -r requirements.txt
+```
 
-| Library       | Version | Link                                      | Pre-installed with Anaconda? |
-|---------------|---------|-------------------------------------------|------------------------------|
-| TensorFlow    | 2.5.0   | [tensorflow](https://pypi.org/project/tensorflow/) | No                          |
-| Keras         | 2.9.0   | [keras](https://pypi.org/project/keras/) | No                          |
-| OpenCV (cv2)  | 4.5.4   | [opencv-python](https://pypi.org/project/opencv-python/) | No                          |
-| Natsort       | 8.4.0   | [natsort](https://pypi.org/project/natsort/) | No                          |
-| SciPy         | 1.7.1   | [scipy](https://pypi.org/project/scipy/) | Yes                         |
-| Pillow (PIL)  | 8.4.0   | [Pillow](https://pypi.org/project/Pillow/) | Yes                         |
-| NumPy         | 1.20.3  | [numpy](https://pypi.org/project/numpy/) | Yes                         |
-| Pandas        | 1.3.4   | [pandas](https://pypi.org/project/pandas/) | Yes                         |
-| Matplotlib    | 3.4.3   | [matplotlib](https://pypi.org/project/matplotlib/) | Yes                         |
+This approach is preferred over installing individual libraries manually, because it keeps the environment consistent with the tested project setup.
 
-### How to Install
-#### For Libraries Not Pre-installed
-1. Open your terminal (or Anaconda Prompt).
-2. Install the libraries manually using the following commands:
-   ```bash
-   pip install tensorflow
-   pip install keras
-   pip install opencv-python
-   pip install natsort
+---
+
+## Step 5: Set Up Jupyter Notebook
+
+Jupyter Notebook provides the easiest way to run the analysis workflow interactively.
+
+1. Register the environment as a notebook kernel:
+
+```bash
+python -m ipykernel install --user --name=srof --display-name "Python (srof)"
+```
+
+2. Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
 
 ---
 
 ## Step 6: Open the Code in Jupyter Notebook
 
-1. Launch Jupyter Notebook:
+1. In the Jupyter interface, navigate to the downloaded repository.
 
-2. Navigate to the downloaded repository:
-   - Go to the directory where you saved the GitHub repository (e.g., `C:/Users/[your_admin_name]/`).
-   - Open the file named `Control Panel.ipynb`.
+2. Open the file named `analysis_workflow.ipynb`.
+
+3. If prompted, select the `Python (srof)` kernel.
 
 ---
 
@@ -174,10 +155,10 @@ Your `slope` folder should now contain the marked frames `1.bmp` and `2.bmp`, re
 Once you have prepared your video frames and introduced the drop slope, you can start running the code by following these instructions:
 
 1. **Start the Notebook**:  
-   Open the Jupyter Notebook file (e.g., `Control Panel.ipynb`) in your Jupyter Notebook environment.
+   Open the Jupyter Notebook file (e.g., `analysis_workflow.ipynb`) in your Jupyter Notebook environment.
 
 2. **Run the First Cell**:  
-   - The first cell contains the code to load libraries and define necessary functions.
+   - The first cell loads the required libraries and imports the shared workflow helper functions from `srof/analysis_workflow.py`.
    - Simply run the cell by selecting it and pressing `Shift + Enter` (or `Ctrl + Enter`).  
    - This step initializes the environment and sets up the required tools for further analysis.
 
@@ -210,6 +191,8 @@ After setting the variables in the second cell, follow these steps:
      - **`y_center (cm)`**: Y-coordinate of the droplet's center.
      - **`middle_angle_degree (degree)`**: Middle angle of the droplet in degrees.
      - **`velocity (cm/s)`**: Droplet velocity in centimeters per second.
+
+   The notebook now uses platform-independent path handling, so the same workflow should work on Windows, macOS, and Linux as long as your experiment folders and files are prepared as described.
     
 
 ## Important Points
@@ -231,6 +214,3 @@ After setting the variables in the second cell, follow these steps:
 3. **Slope Folder**:  
    - If you plan to perform measurements for different droplet numbers or tilt angles **without altering the experimental setup**, you can reuse the `slope` folder created during the first experiment. Simply copy this folder to the new experiment directory, and there is no need to create a new `slope` folder.  
    - However, if the setup is adjusted (e.g., changing the surface or modifying the alignment), the relative angle between the camera and the sample may change. In such cases, you must create a new `slope` folder and generate fresh `.bmp` files to ensure accurate measurements.
-
-
-
