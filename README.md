@@ -53,13 +53,23 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
     Shared helper functions used by the notebook now live in `srof/analysis_workflow.py`, which keeps the notebook setup cell cleaner and makes the workflow logic easier to maintain.
 
-
 ---
-## PFOTS Sample with a Defect
+## Example Output
 
-- **Files:** `PFOTS sample with a defect.zip.001 - .007`  
+- **Release file:** `toolkit-output-example.zip`
 
-    These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
+    A ready-to-check example output package is available in the GitHub release:
+
+    - [Download toolkit-output-example.zip](https://github.com/shumaly/4S-SROF/releases/download/v1.0.0/toolkit-output-example.zip)
+
+    To try it:
+
+    1. Download and extract `toolkit-output-example.zip`.
+    2. Put the extracted example folder in the main project folder.
+    3. Run `analysis_workflow.ipynb` on the sample input data.
+    4. Compare your generated files with the example output folder to confirm the workflow is running correctly.
+
+    This is a simple way for new users to test the toolkit, understand the folder structure, and see the expected output format before working with their own datasets.
 
 ---
 
