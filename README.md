@@ -53,13 +53,39 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
     Shared helper functions used by the notebook now live in `srof/analysis_workflow.py`, which keeps the notebook setup cell cleaner and makes the workflow logic easier to maintain.
 
+---
+## Example Output
+
+- **Release file:** `toolkit-output-example.zip`
+
+    A ready-to-check example output package is available in the GitHub release:
+
+    - [Download toolkit-output-example.zip](https://github.com/shumaly/4S-SROF/releases/download/v1.0.0/toolkit-output-example.zip)
+
+    To try it:
+
+    1. Download and extract `toolkit-output-example.zip`.
+    2. Put the extracted example folder in the main project folder.
+    3. Run `analysis_workflow.ipynb` on the sample input data.
+    4. Compare your generated files with the example output folder to confirm the workflow is running correctly.
+
+    This is a simple way for new users to test the toolkit, understand the folder structure, and see the expected output format before working with their own datasets.
 
 ---
 ## PFOTS Sample with a Defect
 
-- **Files:** `PFOTS sample with a defect.zip.001 - .007`  
+- **Release/sample data:** `PFOTS sample with a defect`
 
-    These files contain a sample of sliding drop video frame examples that have been processed using the code, including results from all steps of the analysis. You can use this sample to try the code and gain a better understanding of how it works. It serves as a practical example to help you learn more about the workflow and outputs of the analysis toolkit.
+    This sample contains sliding drop video frames and related analysis assets that you can use as a practical example input for the toolkit.
+
+    Recommended workflow:
+
+    1. Place the sample folder in the main project directory.
+    2. Open `analysis_workflow.ipynb`.
+    3. Point the notebook to the sample folder and run the workflow.
+    4. Review the generated outputs and compare them with the released example output package above.
+
+    This gives users a quick end-to-end test case for learning the pipeline and checking that the toolkit is producing the expected results.
 
 ---
 
