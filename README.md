@@ -72,22 +72,6 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
     This is a simple way for new users to test the toolkit, understand the folder structure, and see the expected output format before working with their own datasets.
 
 ---
-## PFOTS Sample with a Defect
-
-- **Release/sample data:** `PFOTS sample with a defect`
-
-    This sample contains sliding drop video frames and related analysis assets that you can use as a practical example input for the toolkit.
-
-    Recommended workflow:
-
-    1. Place the sample folder in the main project directory.
-    2. Open `analysis_workflow.ipynb`.
-    3. Point the notebook to the sample folder and run the workflow.
-    4. Review the generated outputs and compare them with the released example output package above.
-
-    This gives users a quick end-to-end test case for learning the pipeline and checking that the toolkit is producing the expected results.
-
----
 
 
 ## Dataset
