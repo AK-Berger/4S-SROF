@@ -7,6 +7,43 @@ import cv2
 import natsort
 import numpy as np
 
+RESULT_COLUMNS = [
+    "file number",
+    "time (s)",
+    "x_center (cm)",
+    "adv (degree)",
+    "rec (degree)",
+    "contact_line_length (cm)",
+    "y_center (cm)",
+    "middle_angle_degree (degree)",
+    "velocity (cm/s)",
+]
+
+# Export-time header mapping for compatibility with downstream Excel consumers.
+# We only rename columns that already exist in the workflow output and never add
+# or remove columns from the workbook.
+EXPORT_COLUMN_RENAME_MAP = {
+    "file number": "Video ID",
+    "adv (degree)": "Advancing (degree)",
+    "rec (degree)": "Receding (degree)",
+    "contact_line_length (cm)": "Drop length (cm)",
+    "y_center (cm)": "Drop height (cm)",
+    "middle_angle_degree (degree)": "Middle line angle (degree)",
+    "velocity (cm/s)": "Velocity (cm/s)",
+}
+
+EXPORT_COLUMN_ORDER = [
+    "Video ID",
+    "time (s)",
+    "x_center (cm)",
+    "Advancing (degree)",
+    "Receding (degree)",
+    "Drop length (cm)",
+    "Drop height (cm)",
+    "Velocity (cm/s)",
+    "Middle line angle (degree)",
+]
+
 
 def find_reds(pic):
     red_xs = np.where(pic[:, :, 0] != pic[:, :, 1])[1]
@@ -47,3 +84,9 @@ def make_folders(ad):
         if folder_path.exists():
             shutil.rmtree(folder_path)
         folder_path.mkdir(parents=True, exist_ok=True)
+
+
+def export_results(df, output_path):
+    export_df = df.rename(columns=EXPORT_COLUMN_RENAME_MAP)
+    export_df = export_df[EXPORT_COLUMN_ORDER]
+    export_df.to_excel(output_path, index=False)
