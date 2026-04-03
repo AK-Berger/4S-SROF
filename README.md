@@ -51,6 +51,8 @@ The 4S-SROF toolkit streamlines complex image processing tasks, empowering resea
 
     This file contains the main executable notebook for the toolkit. It acts as the central workflow, calling package modules and libraries to perform the analysis. The notebook processes the video frames, extracts features, and generates the final `result.xlsx` file containing the analyzed time-series data.
 
+    The saved Excel file keeps the same number of output columns as the in-memory workflow data, but selected headers are renamed at save time for downstream compatibility.
+
     Shared helper functions used by the notebook now live in `srof/analysis_workflow.py`, which keeps the notebook setup cell cleaner and makes the workflow logic easier to maintain.
 
 ---

@@ -181,16 +181,16 @@ After setting the variables in the second cell, follow these steps:
 2. **Folders Created Automatically**:  
    After running the second cell, the program will create two new folders in your video frames directory:  
    - **`SR_edge`**: This folder contains the analyzed frame output for each video frame. These images can help you understand the reasons behind the changes observed in the results.  
-   - **`SR_result`**: This folder contains a file named `result.xlsx` with the analyzed features, including the following columns:
-     - **`file number`**: The frame number.
+   - **`SR_result`**: This folder contains a file named `result.xlsx` with the analyzed features. The workflow still exports the same 9 columns and does not add or remove any columns when saving. For Excel compatibility, the saved file uses these headers:
+     - **`Video ID`**: Renamed from `file number`.
      - **`time (s)`**: Time in seconds.
      - **`x_center (cm)`**: X-coordinate of the droplet's center.
-     - **`adv (degree)`**: Advancing contact angle in degrees.
-     - **`rec (degree)`**: Receding contact angle in degrees.
-     - **`contact_line_length (cm)`**: Length of the contact line in centimeters.
-     - **`y_center (cm)`**: Y-coordinate of the droplet's center.
-     - **`middle_angle_degree (degree)`**: Middle angle of the droplet in degrees.
-     - **`velocity (cm/s)`**: Droplet velocity in centimeters per second.
+     - **`Advancing (degree)`**: Renamed from `adv (degree)`.
+     - **`Receding (degree)`**: Renamed from `rec (degree)`.
+     - **`Drop length (cm)`**: Renamed from `contact_line_length (cm)`.
+     - **`Drop height (cm)`**: Renamed from `y_center (cm)`.
+     - **`Velocity (cm/s)`**: Renamed from `velocity (cm/s)`.
+     - **`Middle line angle (degree)`**: Renamed from `middle_angle_degree (degree)`.
 
    The notebook now uses platform-independent path handling, so the same workflow should work on Windows, macOS, and Linux as long as your experiment folders and files are prepared as described.
     
